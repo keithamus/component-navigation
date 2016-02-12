@@ -20,12 +20,9 @@
   align-items: center;
 }
 
-.navigation__user-menu-link--logout {
-  color: var(--navigation-user-icon-color-logout, var(--color-boston));
-}
-
-.navigation__user-menu-link--login {
-  font-size: var(--search__search-label__font-size, var(--navigation-text-size));
+.navigation__user-menu-link--logout, .navigation__user-menu-link--login {
+  color: var(--navigation-user-menu-color, white);
+  font-size: var(--navigation-user-menu-font-size, var(--navigation-text-size));
   padding: 0 var(--navigation__default-menus-padding, var(--main-navigation-link-padding));
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   outline: 0;
@@ -44,7 +41,7 @@
 
 .navigation__user-menu-link--logout .Icon,
 .navigation__user-menu-link--logout .Icon use {
-  fill: var(--navigation-user-icon-color-logout, var(--color-boston));
+  fill: var(--navigation-user-menu-color, white);
 }
 
 .navigation__user-menu .balloon-content {
@@ -56,7 +53,7 @@
 }
 
 .navigation__user-menu-log-in-button {
-  margin: auto;
+  margin: 0 auto 2em;
   clear: both;
   display: block;
   text-align: center;
@@ -64,29 +61,42 @@
   background: var(--navigation__user-menu-background-color, var(--color-chicago));
 }
 
-.navigation__user-menu-register {
-  font-size: var(--text-size-step--2);
-  margin-top: 2em;
-  display: block;
+.navigation__user-menu-linklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.navigation__user-menu-register-link {
-  color: var(--navigation__user-menu-register-link-color, var(--color-chicago));
-  margin-left: 1em;
-  font-weight: bold;
+.navigation__user-menu-linklist--anonymous {
+  font-size: var(--navigation-user-menu-linklist-anonymous-font-size, var(--text-size-step--2));
 }
 
-.navigation__user-menu-manage-subscription {
-  font-size: var(--text-size-step--2);
-  margin-top: 2em;
+.navigation__user-menu-linklist-item {
   display: block;
   text-align: left;
 }
 
-.navigation__user-menu-manage-subscription-link {
-  color: var(--navigation__user-menu-manage-subscription-link-color, var(--color-chicago));
-  margin-left: 1em;
+.navigation__user-menu-linklist-item:not(:first-child) {
+  margin-top: 1em;
+}
+
+.navigation__user-menu-linklist-link {
+  color: var(--navigation__user-menu-linklist-link-color, var(--color-kiev));
+  text-decoration: none;
+}
+
+.navigation__user-menu-linklist-link:hover {
+  color: var(--navigation__user-menu-linklist-link-hover-color, var(--color-chicago));
+}
+
+.navigation__user-menu-linklist-link--cta {
+  color: var(--navigation__user-menu-linklist-link-cta-color, var(--color-chicago));
   font-weight: bold;
+}
+
+.navigation__user-menu-linklist-link--cta:hover {
+  color: var(--navigation__user-menu-linklist-link-cta-hover-color, var(--color-beijing));
+  text-decoration: none;
 }
 
 .navigation__user-menu .balloon {
