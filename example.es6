@@ -3,7 +3,6 @@ if (typeof document === 'object') {
 }
 
 import Navigation from './index';
-import SubscribeMessage from '@economist/component-subscribe-message';
 import React from 'react';
 // Get data.
 import context from '@economist/component-sections-card/context';
@@ -71,22 +70,10 @@ export default (
           sectionsCardData={context}
           accordionData={accordionContext}
           sharedMenu={sharedMenu}
-        >
-          <SubscribeMessage counter="1/3"/>
-        </Navigation>
-        <p>Stretch the page to test the sticky functionality applied to the navigation</p>
-        <p>Stretch the page to test the sticky functionality applied to the navigation</p>
-        <p>Stretch the page to test the sticky functionality applied to the navigation</p>
-        <p>Stretch the page to test the sticky functionality applied to the navigation</p>
-        <p>Stretch the page to test the sticky functionality applied to the navigation</p>
-        <p>Stretch the page to test the sticky functionality applied to the navigation</p>
-        <p>Stretch the page to test the sticky functionality applied to the navigation</p>
-        <p>Stretch the page to test the sticky functionality applied to the navigation</p>
-        <p>Stretch the page to test the sticky functionality applied to the navigation</p>
-        <p>Stretch the page to test the sticky functionality applied to the navigation</p>
-        <p>Stretch the page to test the sticky functionality applied to the navigation</p>
-        <p>Stretch the page to test the sticky functionality applied to the navigation</p>
-        <p>Stretch the page to test the sticky functionality applied to the navigation</p>
+        />
+        <p style={{ paddingBottom: '400px' }}>
+          Scroll down to experience the thrill of sticky header technology
+        </p>
     </div>
     <div>
       <Navigation className="navigation navigation--registered navigation--sticked"
@@ -97,6 +84,23 @@ export default (
         accordionData={accordionContext}
         sharedMenu={sharedMenu}
       />
+      <p style={{ paddingBottom: '400px' }}>
+        Scroll down to experience the thrill of sticky header technology
+      </p>
+    </div>
+    <div>
+      <Navigation className="navigation navigation--registered navigation--sticked"
+        svgUri="assets/icons.svg"
+        userLoggedIn
+        userIsSubscriber
+        autohide={false}
+        sectionsCardData={context}
+        accordionData={accordionContext}
+        sharedMenu={sharedMenu}
+      />
+      <p style={{ paddingBottom: '400px' }}>
+        Scroll down to experience the thrill of sticky header technology
+      </p>
     </div>
   </div>
 );

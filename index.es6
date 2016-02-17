@@ -21,6 +21,7 @@ export default class Navigation extends React.Component {
       autohide: React.PropTypes.bool,
       svgUri: React.PropTypes.string,
       userLoggedIn: React.PropTypes.bool,
+      userIsSubscriber: React.PropTypes.bool,
       currentUrl: React.PropTypes.string,
       sharedMenu: React.PropTypes.object.isRequired,
       sectionsCardData: React.PropTypes.object.isRequired,
@@ -35,10 +36,10 @@ export default class Navigation extends React.Component {
   }
 
   renderLoginLogout() {
-    const { currentUrl, userLoggedIn } = this.props;
+    const { currentUrl, userLoggedIn, userIsSubscriber } = this.props;
     const destinationParameter = currentUrl ? `?destination=${encodeURIComponent(currentUrl)}` : '';
     const buttonUrl = userLoggedIn ? `/logout${destinationParameter}` : `/user/login${destinationParameter}`;
-    const buttonClassSuffix = userLoggedIn ? 'login' : 'logout'
+    const buttonClassSuffix = userLoggedIn ? 'login' : 'logout';
     const buttonText = userLoggedIn ? `My Account` : `Log in`;
     const registerUrl = `/user/register${destinationParameter}`;
     const userMenuBalloonTrigger = (
@@ -49,6 +50,49 @@ export default class Navigation extends React.Component {
         unstyled
       >{buttonText}</Button>
     );
+    if (userLoggedIn && userIsSubscriber) {
+      return (
+        <Balloon showOnHover trigger={userMenuBalloonTrigger}>
+          <ul className="navigation__user-menu-linklist">
+            <li className="navigation__user-menu-linklist-item">
+              <a className="navigation__user-menu-linklist-link" href="/user">
+                My account
+              </a>
+            </li>
+            <li className="navigation__user-menu-linklist-item">
+              <a className="navigation__user-menu-linklist-link" href="https://subscriptions.economist.com">
+                Manage my subscription
+              </a>
+            </li>
+            <li className="navigation__user-menu-linklist-item">
+              <a className="navigation__user-menu-linklist-link" href="/subscriptions/renew">
+                Renew my subscription
+              </a>
+            </li>
+            <li className="navigation__user-menu-linklist-item">
+              <a className="navigation__user-menu-linklist-link" href="https://subscriptions.economist.com">
+                Buy a gift subscription
+              </a>
+            </li>
+            <li className="navigation__user-menu-linklist-item">
+              <a className="navigation__user-menu-linklist-link" href="/users/guest-olejses/newsletters">
+                Newsletters
+              </a>
+            </li>
+            <li className="navigation__user-menu-linklist-item">
+              <a className="navigation__user-menu-linklist-link" href="/users/guest-olejses/comments">
+                My comments
+              </a>
+            </li>
+            <li className="navigation__user-menu-linklist-item">
+              <a className="navigation__user-menu-linklist-link--cta" href="/logout?destination=">
+                Log out
+              </a>
+            </li>
+          </ul>
+        </Balloon>
+      )
+    }
     if (userLoggedIn) {
       return (
         <Balloon showOnHover trigger={userMenuBalloonTrigger}>
