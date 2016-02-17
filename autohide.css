@@ -1,0 +1,18 @@
+@media screen and (max-width: 36rem) {
+  .navigation__secondary-autohide {
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier( 0.215, 0.610, 0.355, 1.000 );
+    transition-property: transform;
+    z-index: -1;
+    position: relative;
+    width: 100%;
+  }
+
+  .navigation__secondary-autohide--hidden {
+    transform: translateY( -100% );
+  }
+
+  .navigation__secondary-autohide--nohide {
+    height: 0;
+  }
+}

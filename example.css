@@ -1,0 +1,21 @@
+@import '@economist/component-typography';
+@import '@economist/component-palette';
+@import '@economist/component-grid';
+@import "@economist/component-icon";
+@import "sticked.css";
+@import "autohide.css";
+@import "index.css";
+
+body {
+  -webkit-font-smoothing: antialiased;
+  max-width: 1000px;
+  margin: auto;
+}
+
+#component-preview {
+  background: white;
+}
+
+.component-panel {
+  overflow: hidden;
+}

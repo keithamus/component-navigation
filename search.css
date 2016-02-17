@@ -1,0 +1,71 @@
+@import "settings";
+@import "@economist/component-google-search";
+
+:root {
+  --navigation__search-default-width: 100px;
+  --navigation__search-default-width-mobile: 50px;
+  --search__search-label__font-size: var(--navigation-text-size);
+}
+
+.navigation__primary-inner {
+  display: flex;
+}
+
+.navigation__link-search {
+  padding: 5px var(--grid-gutter-s);
+  vertical-align: middle;
+  width: 1em;
+}
+
+.navigation__link-search use,
+.navigation__link-search svg {
+  fill: var(--color-thimphu);
+}
+
+.navigation__search {
+  flex: 0 1 auto;
+  padding: 0 var(--navigation__default-menus-padding, var(--main-navigation-link-padding));
+}
+
+.navigation .search {
+  display: table;
+  height: var(--navigation__height, var(--navigation__default-height));
+  right: 10px;
+}
+
+.navigation .search .Icon {
+  width: var(--navigation-icon-size);
+}
+
+.navigation .search .Icon-magnifier {
+  margin-right: 4px;
+}
+
+.navigation .search__search-label {
+  padding-top: 4px;
+}
+
+@media (--navigation-mobile-down){
+  .navigation__search .search__magnifier {
+    height: var(--navigation__height, var(--navigation__default-height));
+    width: var(--navigation__height, var(--navigation__default-height));
+  }
+}
+
+@media (--navigation-tablet-down) {
+  .navigation__search  {
+    padding: 0;
+  }
+  .navigation__search .search__magnifier {
+    min-width: 50px;
+    text-align: center;
+  }
+  .navigation__search .search__search-label {
+    display: none;
+  }
+}
+
+/* Bring Google Search on front */
+.gssb_c {
+    z-index: 10000000;
+}

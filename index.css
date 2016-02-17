@@ -1,0 +1,111 @@
+@import "@economist/component-icon";
+@import "@economist/component-balloon";
+@import "./settings";
+@import "./user-menu";
+@import "./search";
+@import "./mobile-menu";
+@import "./main-navigation";
+@import "@economist/component-subscribe-message";
+@import "@economist/component-typography";
+@import "@economist/component-icon/backgrounds/headset.css";
+@import "@economist/component-icon/backgrounds/video.css";
+@import "@economist/component-icon/backgrounds/film.css";
+
+.navigation {
+  font-size: 1rem;
+  font-family: var(--fontfamily-sans);
+  z-index: 10000000;
+}
+
+.navigation a.navigation__main-navigation-link,
+.navigation .navigation__main-navigation-link > a {
+  text-decoration: none;
+  height: var(--navigation__default-height);
+  padding-top: var(--navigation__link-top-padding);
+  box-sizing: border-box;
+}
+
+.navigation a:hover {
+  cursor: pointer;
+}
+
+.navigation__primary {
+  width: 100%;
+  background: var(--color-kiev);
+  z-index: 2;
+  line-height: 1em;
+  height: var(--navigation__default-height);
+}
+
+.navigation__primary-inner {
+  display: flex;
+  position: relative;
+  height: var(--navigation__default-height);
+}
+
+.navigation__primary-inner > * {
+  /* Required by IE */
+  flex: 1 0 auto;
+  /* Required by older version of Safari */
+  display: -webkit-box;
+}
+
+.navigation__primary-expander {
+   width: 100%;
+   flex: 0 1 auto;
+}
+
+.navigation__secondary-inner {
+  text-align: right;
+  background: var(--color-berlin);
+}
+
+.navigation__main-sections-card .balloon {
+  position: static;
+}
+
+@media (--navigation-mobile-up) {
+  .navigation__link-logo {
+    min-width: 128px;
+  }
+}
+
+.navigation__link-logo {
+  height: var(--navigation__default-height);
+}
+
+.navigation__link-empty-logo {
+  display: none;
+  width: 1em;
+  background: var(--color-economist);
+  height: 100%;
+}
+
+@media (--navigation-mobile-down) {
+  .navigation__link-logo .Icon-economist {
+    display: none;
+  }
+  .navigation__link-empty-logo {
+    display: block;
+  }
+}
+
+/* Stop this from being taller than screen */
+.navigation__primary .navigation__main-sections-card .balloon--content {
+  overflow-y: auto;
+  max-height: calc(100vh - var(--navigation__default-height));
+}
+
+@media (--navigation-mobile-up){
+  .navigation__sections-link:hover,
+  .navigation__main-navigation-link:hover,
+  .navigation__user-menu:hover .link-button__text,
+  .navigation__search:hover .search__search-label {
+    color: var(--navigation__default-hover-color, var(--color-london));
+  }
+
+  .navigation__user-menu:hover use,
+  .navigation__search:hover svg {
+    fill: var(--navigation__default-hover-color, var(--color-london));
+  }
+}

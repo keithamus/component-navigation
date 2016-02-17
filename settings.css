@@ -1,0 +1,14 @@
+@import "@economist/component-typography";
+
+@custom-media --navigation-tablet-down (width <= 860px);
+@custom-media --navigation-mobile-down (width <= 768px);
+@custom-media --navigation-mobile-up (width >= 769px);
+
+:root {
+  --navigation-text-size: var(--text-size-step--2);
+  --navigation__default-menus-padding: 1rem;
+  --navigation-link-color: var(--color-thimphu);
+  --navigation__default-height: 64px;
+  --navigation__link-top-padding: 3px;
+  --navigation-icon-size: 24px;
+}

@@ -1,0 +1,77 @@
+@import "@economist/component-typography";
+@import './settings';
+@import '@economist/component-sections-card';
+
+:root {
+  --icon-height: 28px;
+  --main-navigation-link-padding: 2em;
+}
+
+.navigation__main-navigation-link.balloon {
+  position: static;
+}
+
+.navigation__main-navigation-link {
+  align-self: center;
+  font-size: var(--navigation-text-size);
+  padding: 0 var(--main-navigation-link-padding);
+ }
+
+.navigation__main-navigation-link,
+.navigation__main-navigation-link > a {
+  color: var(--navigation-link-color);
+  white-space: nowrap;
+}
+
+.navigation__sections-link {
+  position: relative;
+}
+
+.navigation__main-navigation-link-subscribe {
+  font-family: var(--fontfamily-sans);
+}
+
+.navigation__main-navigation-link .balloon-content {
+  right: 0;
+}
+
+.navigation__main-sections-card .balloon-content {
+  padding: 3em 0;
+}
+
+.navigation__main-navigation-link--not-visible .balloon-content {
+  display: none;
+}
+
+@media (--navigation-mobile-down) {
+  .navigation__main-navigation-link {
+    display: none !important;
+  }
+}
+
+@media (--navigation-tablet-down) and (--navigation-mobile-up) {
+  .navigation__main-navigation-link {
+    padding-left: 1.8em;
+    padding-right: 1.8em;
+  }
+}
+
+.navigation__main-navigation-link,
+.navigation__sections-link {
+  display: flex;
+  align-items: center;
+}
+
+/* IE9 Flexbox fallback */
+.navigation__primary {
+  display: table;
+}
+
+.navigation__primary-inner {
+  display: table-row;
+}
+
+.navigation__primary-inner > * {
+  display: table-cell;
+  vertical-align: middle;
+}

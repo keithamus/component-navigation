@@ -1,0 +1,27 @@
+{
+  "subscribe": {
+    "title": "Subscribe",
+    "text": "Subscribe",
+    "href": "https://subscriptions.economist.com/GLB/STUCAMP/MAST/"
+  },
+  "myeconomist": {
+    "title": "My Economist",
+    "text": "My Economist",
+    "href": "https://www.economist.com/user"
+  },
+  "logout": {
+    "title": "Log out",
+    "text": "Log out",
+    "href": "http://www.economist.com/log/"
+  },
+  "register": {
+    "title": "Register",
+    "text": "Register",
+    "href": "https://www.economist.com/user/register"
+  },
+  "login": {
+    "title": "Log in",
+    "text": "Log in",
+    "href": "https://www.economist.com/user/login"
+  }
+}
