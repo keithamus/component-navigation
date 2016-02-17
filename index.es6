@@ -18,6 +18,8 @@ export default class Navigation extends React.Component {
         React.PropTypes.element,
       ]),
       links: React.PropTypes.arrayOf(React.PropTypes.object),
+      penName: React.PropTypes.string,
+      logoutDestination: React.PropTypes.string,
       autohide: React.PropTypes.bool,
       svgUri: React.PropTypes.string,
       userLoggedIn: React.PropTypes.bool,
@@ -32,11 +34,13 @@ export default class Navigation extends React.Component {
   static get defaultProps() {
     return {
       autohide: true,
+      penName: 'guest-olejses',
+      logoutDestination: '',
     };
   }
 
   renderLoginLogout() {
-    const { currentUrl, userLoggedIn, userIsSubscriber } = this.props;
+    const { currentUrl, userLoggedIn, userIsSubscriber, penName, logoutDestination } = this.props;
     const destinationParameter = currentUrl ? `?destination=${encodeURIComponent(currentUrl)}` : '';
     const buttonUrl = userLoggedIn ? `/logout${destinationParameter}` : `/user/login${destinationParameter}`;
     const buttonClassSuffix = userLoggedIn ? 'login' : 'logout';
@@ -75,17 +79,20 @@ export default class Navigation extends React.Component {
               </a>
             </li>
             <li className="navigation__user-menu-linklist-item">
-              <a className="navigation__user-menu-linklist-link" href="/users/guest-olejses/newsletters">
+              <a className="navigation__user-menu-linklist-link" href={`/users/${ penName }/newsletters`}>
                 Newsletters
               </a>
             </li>
             <li className="navigation__user-menu-linklist-item">
-              <a className="navigation__user-menu-linklist-link" href="/users/guest-olejses/comments">
+              <a className="navigation__user-menu-linklist-link" href={`/users/${ penName }/comments`}>
                 My comments
               </a>
             </li>
             <li className="navigation__user-menu-linklist-item">
-              <a className="navigation__user-menu-linklist-link--cta" href="/logout?destination=">
+              <a
+                className="navigation__user-menu-linklist-link--cta"
+                href={`/logout?destination=${ logoutDestination }`}
+              >
                 Log out
               </a>
             </li>
@@ -118,17 +125,20 @@ export default class Navigation extends React.Component {
               </a>
             </li>
             <li className="navigation__user-menu-linklist-item">
-              <a className="navigation__user-menu-linklist-link" href="/users/guest-olejses/newsletters">
+              <a className="navigation__user-menu-linklist-link" href={`/users/${ penName }/newsletters`}>
                 Newsletters
               </a>
             </li>
             <li className="navigation__user-menu-linklist-item">
-              <a className="navigation__user-menu-linklist-link" href="/users/guest-olejses/comments">
+              <a className="navigation__user-menu-linklist-link" href={`/users/${ penName }/comments`}>
                 My comments
               </a>
             </li>
             <li className="navigation__user-menu-linklist-item">
-              <a className="navigation__user-menu-linklist-link--cta" href="/logout?destination=">
+              <a
+                className="navigation__user-menu-linklist-link--cta"
+                href={`/logout?destination=${ logoutDestination }`}
+              >
                 Log out
               </a>
             </li>
