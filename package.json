@@ -2,9 +2,9 @@
   "name": "@economist/component-navigation",
   "version": "3.0.1",
   "description": "A navigation masthead",
-  "homepage": "http://github.com/economist-components/component-navigation",
+  "homepage": "https://github.com/economist-components/component-navigation",
   "bugs": {
-    "url": "http://github.com/economist-components/component-navigation/issues"
+    "url": "https://github.com/economist-components/component-navigation/issues"
   },
   "license": "MIT",
   "author": "The Economist (http://economist.com)",
@@ -52,7 +52,7 @@
     "doc:js": "browserify $npm_package_config_doc_js_options $npm_package_directories_test/*.js -o $npm_package_directories_site/bundle.js",
     "lint": "npm-run-all --parallel lint:*",
     "lint:css": "stylelint $npm_package_directories_src/*.css",
-    "lint:js": "eslint $npm_package_directories_src",
+    "lint:js": "eslint --ignore-path .gitignore .",
     "prepages": "npm run doc",
     "pages": "git-directory-deploy --directory $npm_package_directories_site --branch gh-pages",
     "provision": "provision-react-component",
@@ -140,10 +140,11 @@
     "@economist/component-palette": "^1.4.4",
     "@economist/component-typography": "^3.1.1",
     "@economist/doc-pack": "^1.0.6",
-    "@economist/provision-react-component": "1.4.0",
+    "@economist/provision-react-component": "^1.4.3",
     "babel": "^5.8.34",
     "babel-core": "^5.8.35",
     "babel-eslint": "^5.0.0",
+    "babel-polyfill": "^6.6.1",
     "babelify": "^6.4.0",
     "browserify": "^13.0.0",
     "chai": "^3.5.0",

@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import Navigation from '../src';
 import React from 'react';
 import chai from 'chai';

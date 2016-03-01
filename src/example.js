@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import Navigation from './';
 import React from 'react';
 import navgiationLinks from '@economist/component-sections-card/context';
